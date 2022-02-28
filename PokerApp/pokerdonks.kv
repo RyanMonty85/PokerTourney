@@ -1,0 +1,154 @@
+BoxLayoutExample:
+
+<BoxLayoutExample>:
+    orientation: "horizontal"
+    spacing: "10dp"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'poker.png'
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "Player +"
+            font_size: self.width/8
+            on_press: root.player_button_click()
+        Button:
+            text: "Player -"
+            font_size: self.width/8
+            on_press: root.rem_player_button_click()
+        Button:
+            text: "Rebuy +"
+            font_size: self.width/8
+            on_press: root.rebuy_button_click()
+        Button:
+            text: "Rebuy -"
+            font_size: self.width/8
+            on_press: root.rem_rebuy_button_click()
+        Button:
+            text: "Buy-In Amount +"
+            font_size: self.width/10
+            on_press: root.buyin_button_click()
+        Button:
+            text: "Buy-In Amount -"
+            font_size: self.width/10
+            on_press: root.lower_buyin_button_click()
+        Button:
+            text: "Level Length +"
+            font_size: self.width/10
+            on_press: root.level_button_click()
+        Button:
+            text: "Level Length -"
+            font_size: self.width/10
+            on_press: root.lower_level_button_click()
+        Button:
+            text: "Payouts +"
+            font_size: self.width/8
+            on_press: root.payout_button_click()
+        Button:
+            text: "Payouts -"
+            font_size: self.width/8
+            on_press: root.lower_payout_button_click()
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        Label:
+            text: root.main_text
+            pos_hint: {"center_y": .5}
+            font_size: self.width/5
+        Label:
+            text: root.rebuy_text
+            pos_hint: {"center_y": .5}
+            font_size: self.width/5
+        Label:
+            text: root.buyin_text
+            pos_hint: {"center_y": .5}
+            font_size: self.width/5
+        Label:
+            text: root.level_text
+            pos_hint: {"center_y": .5}
+            font_size: self.width/5
+        Label:
+            text: root.payout_text
+            pos_hint: {"center_y": .5}
+            font_size: self.width/5
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "Next Level"
+            font_size: self.width/8
+            on_press: root.next_level_click()
+        Button:
+            text: "Previous Level"
+            font_size: self.width/8
+            on_press: root.prev_level_click()
+        Button:
+            text: "Start/Pause"
+            font_size: self.width/8
+            on_press: root.start_stop()
+        Button:
+            text: "Reset Level"
+            font_size: self.width/8
+            on_press: root.reset_clock() 
+        Button:
+            text: "Break Next Level"
+            font_size: self.width/8
+            on_press: root.break_level()
+    BoxLayout:
+        orientation: "vertical"
+        Label: 
+            text: "Prize Pool:"
+            font_size: self.width/8
+            pos_hint: {"center_y": .5}
+        Label:
+            text: "Payouts:"
+            font_size: self.width/8
+            pos_hint: {"center_y": .5}
+        Label:
+            text: "Blinds:"
+            font_size: self.width/8
+            pos_hint: {"center_y": .5}
+        Label:
+            text: "Remaining Time:"
+            font_size: self.width/8
+            pos_hint: {"center_y": .5}
+    BoxLayout:
+        orientation: "vertical"
+        Label: 
+            text: root.pool_text
+            font_size: self.width/5
+            pos_hint: {"center_y": .5}
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: root.firstamount_text
+                font_size: self.width/8
+                pos_hint: {"center_y": .5}
+            Label:
+                text: root.secondamount_text
+                font_size: self.width/8
+                pos_hint: {"center_y": .5}
+            Label:
+                text: root.thirdamount_text
+                font_size: self.width/8
+                pos_hint: {"center_y": .5}
+            Label:
+                text: root.fourthamount_text
+                font_size: self.width/8
+                pos_hint: {"center_y": .5}
+            Label:
+                text: root.fifthamount_text
+                font_size: self.width/8
+                pos_hint: {"center_y": .5}
+        Label:
+            id: blinds
+            text: root.blinds_text
+            font_size: self.width/6
+            pos_hint: {"center_y": .5}
+        Label:
+            id: timer
+            text: root.timer_text
+            font_size: self.width/5
+            pos_hint: {"center_y": .5}
+
